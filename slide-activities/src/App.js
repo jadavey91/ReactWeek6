@@ -1,10 +1,10 @@
 import React from "react";
 import { renderIntoDocument } from "react-dom/test-utils";
 import "./App.css";
-// import fiat from '../public/fiat-500.jpg';
-// import kia from '../public/Kia-Ceed.jpg';
-// import audi from '../public/audi-q8.jpg';
-// import suzuki from '../public/suzuki-ignis.jpg';
+import fiat from './fiat-500.jpg';
+import kia from './Kia-Ceed.jpg';
+import audi from './audi-q8.jpg';
+import suzuki from './suzuki-ignis.jpg';
 
 //Module not found: You attempted to import ../public/Kia-Ceed.jpg
 //which falls outside of the project src/ directory. Relative imports outside of src/ are not supported.
@@ -17,6 +17,7 @@ import "./App.css";
 const Info = (props) => {
   return (
     <div>
+      <img src={props.src}></img>
       <p>
         {" "}
         {props.name}, {props.option}{" "}
@@ -39,15 +40,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="CarInfo">
-        <Info name="Fiat 500" option="3 door Manual Petrol" />
+        {/* <Info name="Fiat 500" option="3 door Manual Petrol" />
         <Info name="Kia Ceed" option="5 door Manual Petrol" />
         <Info name="Audi Q8" option="5 door Automatic Diesel" />
-        <Info name="Suzuki Ignis" option="5 door Manual Hybrid" />
-        {/* 
+        <Info name="Suzuki Ignis" option="5 door Manual Hybrid" /> */}
+        
       <Info name = "Fiat 500" option = "3 door Manual Petrol" src = {fiat}/>
       <Info name = "Kia Ceed" option = "5 door Manual Petrol" src = {kia}/> 
       <Info name = "Audi Q8"  option = "5 door Automatic Diesel" src = {audi} />
-      <Info name = "Suzuki Ignis" option = "5 door Manual Hybrid" scr = {suzuki} /> */}
+      <Info name = "Suzuki Ignis" option = "5 door Manual Hybrid" src = {suzuki} />
       </div>
     );
   }
